@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    background-color: rgb(236, 175, 61);
+}
+header{
+    height: 80px;
+    background-color: rgb(153, 112, 0);
+}
+footer{
+    height: 80px;
+}
+#image{
+   
+    
+}
+.container{
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
