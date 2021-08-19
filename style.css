@@ -21,23 +21,31 @@ header{
 header h1{
     font-weight: 900;
     font-size: 3.5em;
+    color: black;
 }
-.fas{
+.fa-shopping-cart{
     font-size: 20px;
     color: black;
     position: absolute;
     right: 30px;
 }
+.fa-arrow-left{
+    font-size: 20px;
+    color: black;
+    position: absolute;
+    left: 30px;
+}
 footer{
     height: 80px;
     background-color: rgb(153, 112, 0);
+    margin-top: 100px;
 }
 #products{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-img{
+.ours img{
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
@@ -51,11 +59,11 @@ img{
 .ours:hover{
     transform: scale(1.03);
 }
-p{
+.oursName{
     text-align: center;
     font-weight: bolder;
     font-size: 1.5em;
-    color: rgb(27, 25, 25);
+    color: rgb(68, 64, 64);
 }
 #card{
     position: absolute;
@@ -68,7 +76,43 @@ p{
     transform: translate(-50%,-50%);
     border-radius: 15px;
 }
-.container{
-    
-
+.photo-info{
+    display: flex;
+}
+#color{
+    display: flex;
+    flex-direction: column;
+}
+#color label{
+    margin-top: 20px;
+    font-weight: bolder;
+    font-size: 1.2em;
+    padding-left: 4%;
+}
+select{
+    width: 170px;
+}
+#nomProduitOurs{
+    font-weight: bolder;
+    font-size: 1.3em;
+    color: rgb(41, 36, 28);
+}
+#nom-photo{
+    padding: 2%;
+}
+#nom-photo p{
+    padding-left: 4%;
+}
+#description{
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 1.1em;
+    max-width: 400px;
+    color: rgb(49, 37, 21);
+}
+#sentPanier{
+    margin-top: 20px;
+}
+#prix{
+    margin-top: 10px;
 }

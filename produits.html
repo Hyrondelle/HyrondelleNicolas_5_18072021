@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orinoco</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5e3b89f47e.js" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <header>
+        <a href="./index.html"><h1>Orinoco</h1></a>
+        <a href="./index.html"><i class="fas fa-arrow-left"></i></a>
+        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+    </header>
+    
+    <div id="product">
+        <div class="photo-info">
+            <div id="nom-photo">
+                <p id="nomProduitOurs"></p>
+                <div id="photo"></div>
+            </div>
+            <div id="info">
+                <div id="color">
+                    <label for="color-select">Couleurs:</label>
+                    <select name="couleur" id="color-select" >
+                        <option value="">Choisissez une couleur</option>
+                    </select>
+                </div>    
+                <div id="description"></div>
+                <p id="prix">prix</p>
+                <button id="sentPanier" type="submit">Ajoutez au panier</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        
+    </footer>
+    
+    
+    <script src="./product.js"></script>
+</body>
+</html>
