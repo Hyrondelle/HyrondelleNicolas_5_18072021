@@ -32,7 +32,7 @@ fetch(url)
                             ourson = dataa[i];
                             
                             console.log(dataa[i]._id);
-                            window.location.replace('./produits.html?'+dataa[i]._id);
+                            window.location.replace('./html/produits.html?'+dataa[i]._id);
                             
                     })
                 })
