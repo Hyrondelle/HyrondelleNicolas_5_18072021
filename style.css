@@ -29,6 +29,14 @@ header h1{
     position: absolute;
     right: 30px;
 }
+header::before{
+    content: '1';
+    position: absolute;
+    right: 35px;
+    top: 35px;
+    color: white;
+    z-index: 1;
+}
 .fa-arrow-left{
     font-size: 20px;
     color: black;
@@ -115,4 +123,14 @@ select{
 }
 #prix{
     margin-top: 10px;
+}
+#panier h1{
+    text-align: center;
+}
+.ligneProduit{
+    font-size: 1.3em;
+    display: flex;
+    width: 80%vw;
+    margin: 10%;
+    justify-content: space-between;
 }
