@@ -14,23 +14,56 @@
 </head>
 <body>
     <header>
-        <a href="../index.html"><h1>Orinoco</h1></a>
-        <a href="../index.html"><i class="fas fa-arrow-left"></i></a>
-        <a href="panier.html"><i class="fas fa-shopping-cart"></i></a>
+        <div class="left">
+           <a href="../index.html"><i class="fas fa-arrow-left"></i></a>
+        </div>
+        <div class="middle">
+            <a class="title" href="../index.html"><h1>Orinoco</h1></a>
+        </div>
+        <div class="right"> 
+            <a id="cart" href="panier.html">
+                <i class="fas fa-shopping-cart"></i>
+                <p id="nbProduitsPanier"></p>
+            </a>
+        </div>
     </header>
     <div id="panier">
         <h1>Panier</h1>
-        <div id="produits">
-            
-        </div>
+        <div id="produits"></div>
+        <div id="total"></div>
     </div>
+    <form>
+        <div class="form-ligne">
+            <label for="nom">nom :</label>
+            <input id="nom" type="text" required>
+        </div>
+        <div class="form-ligne">
+            <label for="prenom">prénom :</label>
+            <input id="prenom" type="text" required>
+        </div>
+        <div class="form-ligne">
+            <label for="adresse">adresse :</label>
+            <input id="adresse" type="text" required>
+        </div>
+        <div class="form-ligne">
+            <label for="ville">ville :</label>
+            <input id="ville" type="text" required>
+        </div>
+        <div class="form-ligne">
+            <label for="email">adresse :</label>
+            <input id="email" type="email" required>
+        </div>
+        <div>
+            <button id="commande" type="submit">Envoyez</button>
+        </div>
+    </form>
     
     
     <footer>
         
     </footer>
     
-    
+    <script src="../js/nbProduitsPanier.js"></script>
     <script src="../js/panier.js"></script>
 </body>
 </html>

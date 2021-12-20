@@ -13,40 +13,64 @@ body{
 header{
     height: 80px;
     background-color: rgb(153, 112, 0);
-    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    
+}
+.container{
+    height: 80VH;
+}
+.left, .middle, .right{
+    width: 33.33%;
+}
+.middle
+{
+    text-align: center;
+}
+.left{
+    padding-left: 20px;
+}
+.right{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
 }
 header h1{
     font-weight: 900;
     font-size: 3.5em;
     color: black;
 }
+.cart{
+    position: relative;
+}
+#nbProduitsPanier{
+    font-weight: 800;
+    font-size: 1.3em;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    color: white;
+    transform: translate(8px,-35px);
+}
 .fa-shopping-cart{
     font-size: 20px;
     color: black;
-    position: absolute;
-    right: 30px;
-}
-header::before{
-    content: '1';
-    position: absolute;
-    right: 35px;
-    top: 35px;
-    color: white;
-    z-index: 1;
 }
 .fa-arrow-left{
     font-size: 20px;
-    color: black;
-    position: absolute;
-    left: 30px;
+    color: black; 
 }
 footer{
     height: 80px;
     background-color: rgb(153, 112, 0);
     margin-top: 100px;
+}
+#error{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    font-size:xx-large;
+    font-weight: 800;
 }
 #products{
     display: flex;
@@ -66,6 +90,9 @@ footer{
 }
 .ours:hover{
     transform: scale(1.03);
+}
+.idOurs{
+    display: none;
 }
 .oursName{
     text-align: center;
@@ -130,7 +157,34 @@ select{
 .ligneProduit{
     font-size: 1.3em;
     display: flex;
-    width: 80%vw;
-    margin: 10%;
-    justify-content: space-between;
+    margin: 3%;
+}
+.nomOurs{
+    margin-right: 5%;
+    width: 20vw;
+}
+.prixOurs{
+    margin-right: 5%;
+    width: 10vw;
+}
+#total{
+    max-width: 200px;
+    margin: auto;
+    font-weight: 700;
+    font-size: 1.3em;
+}
+form{
+    margin-left: 20vw;
+    font-size: 1.2em;
+}
+.form-ligne{
+    display: flex;
+    width: 50vw;
+    margin: 2%;
+}
+label {
+   width: 20vw;
+}
+.error{
+    color: darkred;
 }

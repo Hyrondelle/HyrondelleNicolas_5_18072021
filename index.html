@@ -13,8 +13,17 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><h1>Orinoco</h1></a>
-        <a href="../html/panier.html"><i class="fas fa-shopping-cart"></i></a>
+        <div class="left">
+         </div>
+         <div class="middle">
+             <a class="title" href="/index.html"><h1>Orinoco</h1></a>
+         </div>
+         <div class="right"> 
+             <a id="cart" href="../html/panier.html">
+                 <i class="fas fa-shopping-cart"></i>
+                 <p id="nbProduitsPanier"></p>
+             </a>
+         </div>
     </header>
     <div class="container">
         <div id="error"></div>
@@ -23,6 +32,7 @@
     <footer>
         
     </footer>
+    <script src="../js/nbProduitsPanier.js"></script>
     <script src="../js/index.js"></script>
     
 </body>
