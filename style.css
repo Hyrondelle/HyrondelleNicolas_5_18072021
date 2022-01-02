@@ -15,7 +15,7 @@ header{
     background-color: rgb(153, 112, 0);
     display: flex;
     align-items: center;
-    
+    min-width: 300px;
 }
 .container{
     height: 80VH;
@@ -168,23 +168,63 @@ select{
     width: 10vw;
 }
 #total{
+    display: flex;
     max-width: 200px;
     margin: auto;
     font-weight: 700;
     font-size: 1.3em;
+    align-items: center;
+    justify-content: center;
 }
 form{
-    margin-left: 20vw;
+    margin-left: 10vw;
     font-size: 1.2em;
 }
 .form-ligne{
     display: flex;
-    width: 50vw;
+    width: 80vw;
     margin: 2%;
 }
 label {
    width: 20vw;
 }
 .error{
-    color: darkred;
+    color: rgb(235, 22, 22);
+}
+@media screen and (max-width: 888px){
+    .form-ligne{
+        display:block;
+
+    }
+}
+@media screen and (max-width: 556px){
+    #produits{
+        margin: auto;
+        width: 70vw;
+    }
+    .nomOurs{
+        margin-right: 0;
+        min-width: 120px;
+    }
+}
+@media screen and (max-width: 383px){
+    #produits{
+        margin: 0;
+        width: 90vw;
+    }
+    form{
+        margin-left: 0;
+        font-size: 1em;
+    }
+    .ligneProduit{
+        font-size: 1.1em;
+        margin: 0;
+    }
+    .form-ligne{
+        display: flex;
+        flex-direction: column;
+    }
+    input{
+        width: 50vw;
+    }
 }
