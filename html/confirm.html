@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orinoco</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
@@ -14,22 +14,28 @@
 <body>
     <header>
         <div class="left">
-         </div>
-         <div class="middle">
-             <a class="title" href="/index.html"><h1>Orinoco</h1></a>
-         </div>
-         <div class="right"> 
-             <a id="cart" href="../html/panier.html">
-                 <i class="fas fa-shopping-cart"></i>
-                 <p id="nbProduitsPanier"></p>
-             </a>
-         </div>
+           <a href="../index.html"><i class="fas fa-arrow-left"></i></a>
+        </div>
+        <div class="middle">
+            <a class="title" href="../index.html"><h1>Orinoco</h1></a>
+        </div>
+        <div class="right"> 
+            <a id="cart" href="panier.html">
+                <i class="fas fa-shopping-cart"></i>
+                <p id="nbProduitsPanier"></p>
+            </a>
+        </div>
     </header>
+    <div id="confirm">
+        <div class="order">
+            Merci pour votre commande
+            <p></p>
+        </div>
+    </div>
     <footer>
         
     </footer>
+    <script src="../js/confirm.js"></script>
     <script src="../js/nbProduitsPanier.js"></script>
-    <script src="../js/index.js"></script>
-    
 </body>
 </html>

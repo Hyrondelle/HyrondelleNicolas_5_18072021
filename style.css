@@ -9,6 +9,7 @@ body{
     width: 100%;
     background-color: rgb(236, 175, 61);
     font-family: "Style Script";
+    
 }
 header{
     height: 80px;
@@ -18,7 +19,7 @@ header{
     min-width: 300px;
 }
 .container{
-    height: 80VH;
+    min-height: 70VH;
 }
 .left, .middle, .right{
     width: 33.33%;
@@ -63,7 +64,7 @@ header h1{
 footer{
     height: 80px;
     background-color: rgb(153, 112, 0);
-    margin-top: 100px;
+    margin-top: 50px;
 }
 #error{
     margin-top: 30px;
@@ -190,6 +191,12 @@ label {
 }
 .error{
     color: rgb(235, 22, 22);
+}
+.order{
+    padding-top: 3%;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.4em;
 }
 @media screen and (max-width: 888px){
     .form-ligne{

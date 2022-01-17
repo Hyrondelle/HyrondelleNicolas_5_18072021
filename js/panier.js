@@ -2,33 +2,37 @@ const produits = document.getElementById('produits');
 const totalPanier = document.getElementById('total');
 const commande = document.getElementById('commande');
 const errorForm = document.getElementById('errorForm');
-let nbProduits = 0;
-let total =0;
-products = [];
-//---------------vérifier si le panier est vide-------------------------------------
-if(!localStorage.getItem('products')){
-    produits.innerHTML = "Votre panier est vide";
-}
-//----------si le panier n'est pas vide, vérifier de nombre de produits--------------
-else{
-    nbProduits = parseInt(localStorage.getItem('products'));
-    while (nbProduits != 0) {
-        ours = JSON.parse(localStorage.getItem('product'+nbProduits));
-        ligneProduit = document.createElement('div');
-        ligneProduit.className = 'ligneProduit';
-        produits.appendChild(ligneProduit);
-        prixEnEuros = ours.prix /100;
-        ligneProduit.innerHTML = 
-            `<div class="nomOurs">- ${ours.nom}</div>
-             <div class="prixOurs">${prixEnEuros} €</div>
-             <div class="idOurs">${ours.id}</div>
-             <div class="couleurOurs">${ours.couleur}</div>`
-        total += prixEnEuros;
-        products.push(ours.id);
-        nbProduits--;
+let nbProduits;
+let total=null;
+let products = [];
+
+const panier = () =>{
+    if(!localStorage.getItem('products')){
+        nbProduits = 0;
+        produits.textContent = "Votre panier est vide";
     }
-    totalPanier.innerHTML ='total: ' +total+' €';
+    else{
+        produits.textContent = "";
+        nbProduits = parseInt(localStorage.getItem('products'));
+        for(let i=nbProduits;i>0;i--){
+            let ours = JSON.parse(localStorage.getItem('product'+i));
+            let ligneProduit = document.createElement('div');
+            ligneProduit.className = 'ligneProduit';
+            produits.appendChild(ligneProduit);
+            let prixEnEuros = ours.prix /100;
+            ligneProduit.innerHTML = 
+                `<div class="nomOurs">- ${ours.nom}</div>
+                 <div class="prixOurs">${prixEnEuros} €</div>
+                 <div class="idOurs">${ours.id}</div>
+                 <div class="couleurOurs">${ours.couleur}</div>`
+            total += prixEnEuros;
+            products.push(ours.id);
+            totalPanier.innerHTML ='total: ' +total+' €';
+        }
+    }    
 }
+panier();
+
 commande.addEventListener('click',(event)=>{
     event.preventDefault();
     let contact = {
@@ -51,7 +55,11 @@ commande.addEventListener('click',(event)=>{
         headers: { "Content-Type" : "application/json" }
     })
     .then(reponse =>reponse.json())
-    .then(data=>console.log(data))
+    .then(data=>{
+        localStorage.setItem('order',JSON.stringify(data))
+        deleteStorage();
+        window.location.replace('./confirm.html')
+        })
     .catch(e=>console.log(e));
 })
 let inputs = document.querySelectorAll('input');
@@ -117,4 +125,12 @@ const emailChecker = (value,inputId) =>{
         displayError(inputId,"",true);
     }
 }
+const deleteStorage = () =>{
+    while (nbProduits != 0){
+        localStorage.removeItem('product'+nbProduits);
+        nbProduits--;
+    }
+    localStorage.removeItem('products');
+}
 
+ 
