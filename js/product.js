@@ -72,7 +72,7 @@ function sendToCart(){
     })
 }
 sendToCart();
-
+//enleve le message 'produit ajouté' après 3s
 function stopDisplay(){
     productSendToCart.textContent = "";
 }

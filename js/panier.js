@@ -5,7 +5,7 @@ const errorForm = document.getElementById('errorForm');
 let nbProduits;
 let total=null;
 let products = [];
-
+//vérifie si le panier est vide et sinon affiche les produits sélectionnés
 const panier = () =>{
     if(!localStorage.getItem('products')){
         nbProduits = 0;
@@ -32,7 +32,7 @@ const panier = () =>{
     }    
 }
 panier();
-
+//au click rempli l'objet contact
 commande.addEventListener('click',(event)=>{
     event.preventDefault();
     let contact = {
@@ -42,12 +42,14 @@ commande.addEventListener('click',(event)=>{
         city: document.getElementById('ville').value,
         email: document.getElementById('email').value,
     }
+    //renvoi une erreur si un champ est vide
     if(contact.firstName==""||contact.lastName==""||contact.address==""||
         contact.city==""||contact.email==""){
         errorForm.textContent = "vous devez remplir tous les champs";
         return;
     }
     errorForm.textContent = "";
+    //envoi la commande au serveur
     const contactProducts={contact,products};
     fetch('http://localhost:3000/api/teddies/order',{
         method:'POST',
@@ -56,12 +58,14 @@ commande.addEventListener('click',(event)=>{
     })
     .then(reponse =>reponse.json())
     .then(data=>{
+        //si ok, envoi dans le localestorage, efface les produits et envoi sur la page confirm
         localStorage.setItem('order',JSON.stringify(data))
         deleteStorage();
         window.location.replace('./confirm.html')
         })
     .catch(e=>console.log(e));
 })
+//vérifie le champ ou se trouve l'utilisateur et redirige sur la bonne regex
 let inputs = document.querySelectorAll('input');
 inputs.forEach(input =>
     input.addEventListener('input',(e)=>{
@@ -76,7 +80,7 @@ inputs.forEach(input =>
             break;
         }           
     }));
-    
+//affiche 1 erreur si un champ est mal renseigné et passe en rouge l'input    
 const displayError = (inputId,message,valid)=>{
     const elementId = document.getElementById(inputId);
     const divError = document.querySelector("."+inputId+" > div");
@@ -89,6 +93,7 @@ const displayError = (inputId,message,valid)=>{
         elementId.classList.remove('error');
     }
 }
+//vérifie le prénom, le nom et la ville, renvoi true si ok
 const prenomNomVilleChecker = (value,inputId) =>{
     if(value.length == 0){
         displayError(inputId,"");
@@ -103,6 +108,7 @@ const prenomNomVilleChecker = (value,inputId) =>{
         displayError(inputId,"",true);
     }
 }
+//vérifie l'adresse et renvoi true si ok
 const adresseChecker = (value,inputId) =>{
     if(value.length == 0){
         displayError(inputId,"");
@@ -114,6 +120,7 @@ const adresseChecker = (value,inputId) =>{
         displayError(inputId,"",true);
     }
 }
+//vérifie l'email et renvoi true si ok
 const emailChecker = (value,inputId) =>{
     if(value.length == 0){
         displayError(inputId,"");
@@ -125,6 +132,7 @@ const emailChecker = (value,inputId) =>{
         displayError(inputId,"",true);
     }
 }
+//efface les donées du localstorage
 const deleteStorage = () =>{
     while (nbProduits != 0){
         localStorage.removeItem('product'+nbProduits);

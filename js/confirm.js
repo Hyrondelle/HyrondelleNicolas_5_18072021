@@ -4,7 +4,7 @@ const orderTarif = order.products;
 console.log(order);
 console.log(order.contact.firstName);
 let totalPrice = null;
-
+//si plusieurs produits, additionne les prix
 const displayPrice = () => {
     for(let i=orderTarif.length;i>0;i--){
         totalPrice += orderTarif[i-1].price / 100;
